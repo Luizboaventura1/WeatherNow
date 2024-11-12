@@ -14,7 +14,6 @@
     <meta name="author" content="Seu Nome ou Nome da Empresa" />
 
     <link rel="stylesheet" href="assets/css/globalStyles.css" />
-    <link rel="stylesheet" href="assets/css/weatherUI.css" />
 
     <script type="module" src="src/services/weatherApi.js" defer></script>
     <script type="module" src="src/interface/weatherUI.js" defer></script>
@@ -32,9 +31,10 @@
       </div>
     </nav>
     <header class="h-[calc(100vh-60px)] flex items-center bg-zinc-900">
-      <div class="container mx-auto flex justify-center px-4 sm:px-0">
+      <div class="container mx-auto flex justify-center items-center px-4 sm:px-0">
         <section
-          class="bg-zinc-800 p-6 w-full md:max-w-md lg:max-w-lg rounded-md shadow"
+          id="weatherCard"
+          class="bg-zinc-800 hidden p-6 w-full md:max-w-md lg:max-w-lg rounded-md shadow"
         >
           <main class="grid grid-cols-2 gap-3 mb-10">
             <section class="flex">
@@ -81,6 +81,14 @@
             </ul>
           </footer>
         </section>
+        <div id="loader">
+          <main>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+          </main>
+        </div>
       </div>
     </header>
   </body>

@@ -1,34 +1,41 @@
 export default class UserLocation {
-  constructor() {
-    this.baseURL = 'http://ip-api.com/json';
+  async getLocation() {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            resolve({ latitude, longitude });
+          },
+          (error) => {
+            reject(new Error(`Geolocation error: ${error.message}`));
+          }
+        );
+      } else {
+        reject(new Error("Geolocation is not supported by this browser."));
+      }
+    });
   }
 
-  async getLocation() {
+  async getCity() {
+    return "City not available with navigator.geolocation";
+  }
+
+  async getLat() {
     try {
-      const response = await fetch(this.baseURL);
-
-      if (!response.ok) 
-        throw new Error('The URL is invalid or incorrect!');
-
-      const data = await response.json();
-      return data;
+      const data = await this.getLocation();
+      return data.latitude || 'Latitude not found';
     } catch (error) {
       return error.message;
     }
   }
 
-  async getCity() {
-    const data = await this.getLocation();
-    return data.city || 'City not found';
-  }
-
-  async getLat() {
-    const data = await this.getLocation();
-    return data.lat || 'Latitude not found';
-  }
-
   async getLon() {
-    const data = await this.getLocation();
-    return data.lon || 'Longitude not found';
+    try {
+      const data = await this.getLocation();
+      return data.longitude || 'Longitude not found';
+    } catch (error) {
+      return error.message;
+    }
   }
 }
