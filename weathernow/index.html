@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Confira a previsão do tempo em tempo real com nosso app de clima. Informações detalhadas sobre temperatura, umidade, previsão semanal e muito mais."
+    />
+    <meta
+      name="keywords"
+      content="clima, previsão do tempo, temperatura, app de clima, tempo em tempo real"
+    />
+    <meta name="author" content="Seu Nome ou Nome da Empresa" />
+
+    <link rel="stylesheet" href="assets/css/globalStyles.css" />
+    <link rel="stylesheet" href="assets/css/weatherUI.css" />
+
+    <script type="module" src="src/services/weatherApi.js" defer></script>
+    <script type="module" src="src/interface/weatherUI.js" defer></script>
+
+    <title>WeatherNow</title>
+  </head>
+  <body>
+    <nav class="flex items-center bg-zinc-900 h-[60px]">
+      <div class="container grid grid-cols-2 gap-4 mx-auto px-8">
+        <div>
+          <h1 class="text-white font-bold">WeatherNow</h1>
+        </div>
+        <div>
+          <a href=""></a>
+        </div>
+      </div>
+    </nav>
+    <header class="h-[calc(100vh-60px)] flex items-center bg-zinc-900">
+      <div class="container mx-auto flex justify-center px-4 sm:px-0">
+        <section
+          class="bg-zinc-800 p-6 w-full md:max-w-md lg:max-w-lg rounded-md shadow"
+        >
+          <main class="grid grid-cols-2 gap-3 mb-10">
+            <section class="flex">
+              <div class="mr-4">
+                <img
+                  id="currentWeatherImage"
+                  class="w-[40px] h-[40px]"
+                  alt=""
+                />
+              </div>
+              <div class="flex items-start">
+                <span
+                  id="currentTemperature"
+                  class="font-medium text-white text-3xl sm:text-5xl"
+                ></span>
+                <span class="font-medium text-white text-xl sm:text-2xl"
+                  >°C</span
+                >
+              </div>
+            </section>
+            <section class="flex justify-end items-start">
+              <span
+                id="currentLocation"
+                class="font-medium text-white text-sm sm:text-base"
+              ></span>
+            </section>
+          </main>
+          <footer class="flex">
+            <ul class="w-full">
+              <li
+                id="humidity"
+                class="font-normal text-zinc-200 text-base border-b border-zinc-400 w-full pb-2 mb-2"
+              ></li>
+
+              <li
+                id="windSpeed"
+                class="font-normal text-zinc-200 text-base border-b border-zinc-400 w-full pb-2 mb-2"
+              ></li>
+
+              <li
+                id="precipitation"
+                class="font-normal text-zinc-200 text-base border-b border-zinc-400 w-full pb-2 mb-2"
+              ></li>
+            </ul>
+          </footer>
+        </section>
+      </div>
+    </header>
+  </body>
+</html>
