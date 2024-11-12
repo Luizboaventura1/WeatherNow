@@ -22,8 +22,6 @@ const getTemperature = async () => {
     currentTemperature.innerHTML = parseInt(temperature).toFixed(0)
     currentLocation.innerHTML = `${city} - ${region}`
     currentWeatherImage.src = weatherIcon
-
-    console.log(data)
   })
 }
 
