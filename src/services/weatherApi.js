@@ -12,7 +12,7 @@ class weatherApi {
     const lon = await userLocation.getLon();
     const lat = await userLocation.getLat();
 
-    this.baseUrl = `http://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}`;
+    this.baseUrl = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}`;
 
     return this.baseUrl;
   }
