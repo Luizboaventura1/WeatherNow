@@ -30,5 +30,4 @@ class weatherApi {
     }
   }
 }
-
 export default new weatherApi();

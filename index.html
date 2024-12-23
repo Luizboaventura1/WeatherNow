@@ -17,6 +17,7 @@
 
     <script type="module" src="src/services/weatherApi.js" defer></script>
     <script type="module" src="src/interface/weatherUI.js" defer></script>
+    <script type="module" src="src/interface/errorModal.js" defer></script>
 
     <title>WeatherNow</title>
   </head>
@@ -91,5 +92,13 @@
         </div>
       </div>
     </header>
+
+    <section id="errorModal" class="hidden items-center fixed top-0 left-0 w-full h-screen bg-zinc-900">
+      <div class="container mx-auto px-4 max-w-lg">
+        <h1 class="text-neutral-200 font-bold text-2xl mb-3">🚨 Aviso!</h1>
+        <h1 class="text-neutral-200 font-bold mb-5">É preciso ativar a localização para ter acesso as informações do clima</h1>
+        <h1 class="text-neutral-400 font-bold">Ative e recarregue a página</h1>
+      </div>
+    </section>
   </body>
 </html>
