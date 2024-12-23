@@ -13,6 +13,5 @@ const timeout = setInterval(async () => {
     clearInterval(timeout)
   } else {
     errorModal.style.display = "flex";
-    console.log("Desabilitado");
   }
 }, 1000);
