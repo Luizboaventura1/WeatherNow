@@ -17,9 +17,9 @@ const getTemperature = async () => {
     const region = data.location.region
     const weatherIcon = data.current.condition.icon
 
-    humidity.innerHTML = `Humidity: ${data.current.humidity}%`
-    windSpeed.innerHTML = `Wind: ${parseInt(data.current.wind_kph).toFixed(0)} km/h`
-    precipitation.innerHTML = `Rain: ${data.current.precip_mm}mm`
+    humidity.innerHTML = `Humidade: ${data.current.humidity}%`
+    windSpeed.innerHTML = `Vento: ${parseInt(data.current.wind_kph).toFixed(0)} km/h`
+    precipitation.innerHTML = `Chuva: ${data.current.precip_mm}mm`
 
     currentTemperature.innerHTML = parseInt(temperature).toFixed(0)
     currentLocation.innerHTML = `${city} - ${region}`
