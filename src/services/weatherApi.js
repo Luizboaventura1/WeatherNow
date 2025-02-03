@@ -1,9 +1,10 @@
 import UserLocation from "./getUserLocation.js";
 
 class weatherApi {
+  #apiKey;
+
   constructor() {
-    this.baseUrl = "";
-    this.apiKey = "272ccf34287b43d1a29173227241211";
+    this.#apiKey = "272ccf34287b43d1a29173227241211";
   }
 
   async getLocation() {
@@ -12,9 +13,9 @@ class weatherApi {
     const lon = await userLocation.getLon();
     const lat = await userLocation.getLat();
 
-    this.baseUrl = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}`;
-
-    return this.baseUrl;
+    return `https://api.weatherapi.com/v1/current.json?key=${
+      this.#apiKey
+    }&q=${lat},${lon}`;
   }
 
   async getWeather() {
@@ -22,7 +23,7 @@ class weatherApi {
       const getBaseUrl = await this.getLocation();
       const response = await fetch(getBaseUrl);
 
-      if (!response.ok) throw new Error("The URL is invalid or incorrect!");
+      if (!response.ok) throw new Error("The URL is invalid");
 
       return await response.json();
     } catch (error) {

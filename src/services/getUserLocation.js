@@ -17,10 +17,6 @@ export default class UserLocation {
     });
   }
 
-  async getCity() {
-    return "City not available with navigator.geolocation";
-  }
-
   async getLat() {
     try {
       const data = await this.getLocation();
