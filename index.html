@@ -22,20 +22,21 @@
     <title>WeatherNow</title>
   </head>
   <body>
-    <nav class="flex items-center bg-zinc-900 h-[60px]">
+    <nav class="flex items-center bg-primary-white h-[60px]">
       <div class="container grid grid-cols-2 gap-4 mx-auto px-8">
         <div>
-          <h1 class="text-white font-bold">WeatherNow</h1>
+          <h1 class="text-primary-black font-bold">WeatherNow</h1>
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
     </nav>
-    <header class="h-[calc(100vh-60px)] flex items-center bg-zinc-900">
-      <div class="container mx-auto flex justify-center items-center px-4 sm:px-0">
+    <header class="h-[calc(100vh-60px)] flex items-center bg-primary-white">
+      <div
+        class="container mx-auto flex justify-center items-center px-4 sm:px-0"
+      >
         <section
           id="weatherCard"
-          class="bg-zinc-800 hidden p-6 w-full md:max-w-md lg:max-w-lg rounded-md shadow"
+          class="bg-primary-white hidden p-6 w-full md:max-w-md lg:max-w-lg rounded-md shadow border border-zinc-300"
         >
           <main class="grid grid-cols-2 gap-3 mb-10">
             <section class="flex">
@@ -49,9 +50,9 @@
               <div class="flex items-start">
                 <span
                   id="currentTemperature"
-                  class="font-medium text-white text-3xl sm:text-5xl"
+                  class="font-medium text-primary-black text-3xl sm:text-5xl"
                 ></span>
-                <span class="font-medium text-white text-xl sm:text-2xl"
+                <span class="font-medium text-primary-black text-xl sm:text-2xl"
                   >°C</span
                 >
               </div>
@@ -59,7 +60,7 @@
             <section class="flex justify-end items-start">
               <span
                 id="currentLocation"
-                class="font-medium text-white text-sm sm:text-base"
+                class="font-medium text-primary-black text-sm sm:text-base"
               ></span>
             </section>
           </main>
@@ -67,17 +68,17 @@
             <ul class="w-full">
               <li
                 id="humidity"
-                class="font-normal text-zinc-200 text-base border-b border-zinc-400 w-full pb-2 mb-2"
+                class="font-normal text-primary-black text-base border-b border-primary-black w-full pb-2 mb-2"
               ></li>
 
               <li
                 id="windSpeed"
-                class="font-normal text-zinc-200 text-base border-b border-zinc-400 w-full pb-2 mb-2"
+                class="font-normal text-primary-black text-base border-b border-primary-black w-full pb-2 mb-2"
               ></li>
 
               <li
                 id="precipitation"
-                class="font-normal text-zinc-200 text-base border-b border-zinc-400 w-full pb-2 mb-2"
+                class="font-normal text-primary-black text-base border-b border-primary-black w-full pb-2 mb-2"
               ></li>
             </ul>
           </footer>
@@ -93,11 +94,18 @@
       </div>
     </header>
 
-    <section id="errorModal" class="hidden items-center fixed top-0 left-0 w-full h-screen bg-zinc-900">
-      <div class="container mx-auto px-4 max-w-lg">
-        <h1 class="text-neutral-200 font-bold text-2xl mb-3">🚨 Aviso!</h1>
-        <h1 class="text-neutral-200 font-bold mb-5">É preciso ativar a localização para ter acesso as informações do clima</h1>
-        <h1 class="text-neutral-400 font-bold">Ative e recarregue a página</h1>
+    <section
+      id="errorModal"
+      class="hidden items-center fixed top-0 left-0 w-full h-screen bg-primary-white"
+    >
+      <div
+        class="container mx-auto px-4 max-w-lg text-primary-black font-medium border border-zinc-300 rounded-md p-6"
+      >
+        <h1 class="font-bold text-2xl mb-3">🚨 Aviso!</h1>
+        <h1 class="mb-5">
+          É preciso ativar a localização para ter acesso as informações do clima
+        </h1>
+        <h1>Ative e recarregue a página</h1>
       </div>
     </section>
   </body>
